@@ -32,6 +32,11 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    public void clearScore(){
+        score = 0;
+        scoreText.text = "SCORE: "+ score.ToString();
+    }
+
     public void setupScore(){
         highscore = PlayerPrefs.GetInt("highscore",0);
     }

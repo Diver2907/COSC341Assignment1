@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
         if(other.gameObject.layer == 8){
             transform.position = new Vector3(0, 1, 0);
             rbComponent.velocity = new Vector3(0,2,0);
+            ScoreManager.instance.clearScore();
         }
 
         
