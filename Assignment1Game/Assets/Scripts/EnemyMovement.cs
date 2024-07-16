@@ -18,10 +18,13 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         if(transform.position != points[current].position){
-            transform.position = Vector3.MoveTowards(transform.position, points[current].position, speed*Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, points[current].position, speed*0.001f);
         }
-        else{
+        else if(transform.position == points[current].position){
             current++;
+            if(current > 1){
+                current = 0;
+            }
         }
     }
 }
