@@ -53,9 +53,18 @@ public class Player : MonoBehaviour
         if(other.gameObject.layer == 8){
             transform.position = new Vector3(0, 1, 0);
             rbComponent.velocity = new Vector3(0,2,0);
-            ScoreManager.instance.clearScore();
-        }
+            //ScoreManager.instance.clearScore();
+        }        
+    }
 
-        
+    void OnCollisionEnter(Collision collision){
+        if(collision.gameObject.layer == 9){
+            transform.position = new Vector3(0, 1, 0);
+            rbComponent.velocity = new Vector3(0,2,0);
+            //ScoreManager.instance.clearScore();
+        }
+        if(collision.gameObject.layer == 10){
+            rbComponent.velocity = new Vector3(0,7,0);
+        }
     }
 }
