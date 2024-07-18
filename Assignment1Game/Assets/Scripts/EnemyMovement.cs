@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -21,13 +20,12 @@ public class Enemy : MonoBehaviour
         if(transform.position != points[current].position){
             transform.position = Vector3.MoveTowards(transform.position, points[current].position, speed*0.001f);
         }
-        else{
+        else if(transform.position == points[current].position){
             current++;
-            if(current == 2){
+            if(current > 1){
                 current = 0;
             }
         }
     }
-    
 }
 
