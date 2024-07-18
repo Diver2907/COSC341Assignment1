@@ -47,13 +47,17 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
             ScoreManager.instance.AddPoint();
         }
+        if(other.gameObject.layer == 11){
+            transform.position = new Vector3(0, 1, 0);
+            rbComponent.velocity = new Vector3(0,2,0);
+        }
     }
     
     private void OnTriggerExit(Collider other){
         if(other.gameObject.layer == 8){
             transform.position = new Vector3(0, 1, 0);
             rbComponent.velocity = new Vector3(0,2,0);
-            //ScoreManager.instance.clearScore();
+            ScoreManager.instance.clearScore();
         }        
     }
 
@@ -61,7 +65,7 @@ public class Player : MonoBehaviour
         if(collision.gameObject.layer == 9){
             transform.position = new Vector3(0, 1, 0);
             rbComponent.velocity = new Vector3(0,2,0);
-            //ScoreManager.instance.clearScore();
+            ScoreManager.instance.clearScore();
         }
         if(collision.gameObject.layer == 10){
             rbComponent.velocity = new Vector3(0,7,0);

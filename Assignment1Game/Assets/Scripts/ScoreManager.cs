@@ -18,7 +18,7 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first git iframe update
     void Start()
     {
-        setupScore();
+        highscore = PlayerPrefs.GetInt("highscore",0);
         scoreText.text = "SCORE: "+ score.ToString();
         highScoreText.text = "HIGHSCORE: "+ highscore.ToString();
     }
@@ -32,8 +32,8 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    
-    public void setupScore(){
-        highscore = PlayerPrefs.GetInt("highscore",0);
+    public void clearScore(){
+        score = 0;
+        scoreText.text = "SCORE: "+ score.ToString();
     }
 }
