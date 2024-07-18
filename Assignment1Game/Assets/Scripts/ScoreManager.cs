@@ -15,7 +15,7 @@ public class ScoreManager : MonoBehaviour
         instance = this;
     }
 
-    // Start is called before the first frame update
+    // Start is called before the first git iframe update
     void Start()
     {
         setupScore();
